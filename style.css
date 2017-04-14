@@ -1,0 +1,216 @@
+h1, h2, h3 {
+  font-family: comic sans ms;
+  /*clear: both;*/
+}
+
+p {
+  font-family: arial;
+}
+
+
+#block-vs-inline p, a {
+  background-color: red;
+  width: 20%;
+  margin:5px;
+  padding: 20px;
+  border: 2px solid black;
+  /*display: inline-block;*/
+  /*display: block; */
+  text-align: center;
+}
+
+
+
+/*width, and margin don't apply to inline elements*/
+/*they do after you change the display type to block or inline block*/
+
+
+/*=====================Floats===========================*/
+
+/*floats position to the very right or very left of PARENT element*/
+/*gets removed from normal document flow*/
+
+.wrapper {
+  background-color: #ffe6e6;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrapper p {
+  margin-bottom: 40px;
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#text-wrap>img {
+  float: right;
+  float: left;
+  margin: 0px 10px 20px;
+}
+
+#text-wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/*thumbnnails*/
+.blue {
+  background: blue;
+  float: right;
+}
+
+.red {
+  background: red;
+  float: left;
+  /*margin: 10px;*/
+}
+
+.green {
+  background: green;
+  float: right;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+}
+
+#thumbnails {
+  margin-bottom: 40px;
+}
+
+/*clear thumbnail floats!*/
+#thumbnails:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*services*/
+.service h2, .service p {
+  color: #999;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.service {
+  float: left;
+  background: green;
+  width: 28%;
+  margin: 1%;
+  padding: 1%;
+  height: 140px;
+  border: 2px black dotted;
+  position: relative;
+}
+
+/*relative position staircase effect*/
+.service:nth-child(1) {
+  top: 5px;
+}
+
+.service:nth-child(2) {
+  top: 15px;
+}
+
+.service:nth-child(3) {
+  top: 25px;
+}
+
+#services {
+  margin-bottom: 50px;
+}
+
+/*clear service floats!*/
+#services:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.content {
+  padding: 10px;
+  /*background: #ccc;*/
+  clear: right;
+  margin: 30px 1%;
+}
+
+/*text columns without floats!*/
+.content p {
+  -webkit-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 50px;
+  column-gap: 50px;
+  -webkit-column-rule: 1px solid #ccc;
+  column-rule: 1px solid #ccc;
+  text-align: justify;
+}
+
+/*columns with float*/
+section, aside {
+  float: left;
+  width: 46%;
+  padding: 1%;
+  margin: 1%;
+  background: #ccc;
+}
+
+.columns:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*absolute+relative positioning combo*/
+/*absolute positioned item looks for nearest relative positioned parent*/
+#banner {
+  max-height: 300px;
+  overflow: hidden;
+  margin: 7% 0 5%;
+  position: relative;
+}
+
+#banner h2{
+  position: absolute;
+  top: 50px;
+  margin:0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+/*fixed positiong nav*/
+nav {
+  background: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+nav li {
+  list-style-type: none;
+  margin: 0 10px;
+  color: #fff;
+  float: right;
+}
+
+nav h1 {
+  float: left;
+  margin: 1% 2% 0;
+  color: #fff;
+}
